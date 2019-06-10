@@ -1,4 +1,5 @@
 import { createNote } from './noteActions';
+// import { newNoteToApi } from '../services/noteApi';
 
 jest.mock('../services/noteApi.js', () => ({
   newNoteToApi() {

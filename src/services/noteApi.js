@@ -1,6 +1,9 @@
+import { post, get } from './request.js';
+
 export const newNoteToApi = note => {
-  return Promise.resolve({
-    _id: '12345',
-    ...note
-  });
+  return post('/notes', note);
+};
+
+export const getAllNotesFromApi = () => {
+  return get('/notes');
 };
