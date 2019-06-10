@@ -4,6 +4,6 @@ export const newNoteToApi = note => {
   return post('/notes', note);
 };
 
-export const getAllNotesFromApi = () => {
-  return get('/notes');
-};
+// export const getAllNotesFromApi = () => {
+//   return get('/notes');
+// };
