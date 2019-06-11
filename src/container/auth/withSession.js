@@ -3,11 +3,11 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { login } from '../../services/auth';
 import { getToken } from '../../selectors/sessionSelector';
-
 export const withSession = Component => {
   class withSession extends PureComponent{
     static propTypes = {
-      token: PropTypes.string
+      token: PropTypes.string,
+      match: PropTypes.object
     }
 
     componentDidMount(){
@@ -16,9 +16,8 @@ export const withSession = Component => {
     }
     
     render(){
-      console.log(this.props.token);
       if(!this.props.token) return <h1>Loading</h1>;
-      return <Component />;
+      return <Component match={this.props.match}/>;
     }
   }
   

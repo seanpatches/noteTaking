@@ -17,6 +17,7 @@ class NoteDetail extends PureComponent{
   }
 
   render() {
+    if(!this.props.note) return <h1>Loading</h1>;
     return <SingleNote note={this.props.note} />;
   }
 }
@@ -27,10 +28,11 @@ const mapDispatchToProps = dispatch => ({
   }
 });
 
-const mapStateToProps = (state, props) => ({
-  note: getSingleNote(state),
-  selectedNote: props.match.params.id
-});
+const mapStateToProps = (state, props) => {
+  return ({
+    note: getSingleNote(state),
+    selectedNote: props.match.params.id
+  });};
 
 export default connect(
   mapStateToProps,
