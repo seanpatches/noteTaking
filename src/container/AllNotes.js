@@ -16,9 +16,6 @@ class AllNotes extends PureComponent {
     this.props.fetch();
   }
 
-  componentDidUpdate(prevProps){
-    console.log('updated', prevProps.notes);
-  }
   render() {
     const { notes, loading } = this.props;
     if(loading) return <h1>Loading</h1>;
