@@ -19,7 +19,6 @@ class NoteDetail extends PureComponent{
   render() {
     return <SingleNote note={this.props.note} />;
   }
-
 }
 
 const mapDispatchToProps = dispatch => ({
