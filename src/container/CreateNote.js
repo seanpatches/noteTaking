@@ -2,11 +2,12 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
 import NoteForm from '../components/notes/NoteForm';
-import { createNote } from '../actions/noteActions';
-
+import { createNote, fetchNotes } from '../actions/noteActions';
+ 
 class CreateNote extends PureComponent {
   static propTypes = {
-    makeNote: PropTypes.func.isRequired
+    makeNote: PropTypes.func.isRequired,
+    fetch: PropTypes.func.isRequired
   }
 
   state = {
@@ -23,6 +24,7 @@ class CreateNote extends PureComponent {
     const { title, body } = this.state;
     this.props.makeNote({ title, body });
     this.setState({ title:'', body: '' });
+    this.props.fetch();
   }
 
   render(){
@@ -41,6 +43,9 @@ class CreateNote extends PureComponent {
 const mapDispatchToProps = dispatch => ({
   makeNote(note){
     dispatch(createNote(note));
+  },
+  fetch(){
+    dispatch(fetchNotes());
   }
 });
 
