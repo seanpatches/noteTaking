@@ -7,3 +7,7 @@ export const newNoteToApi = note => {
 export const getNotesFromApi = () => {
   return get('/notes');
 };
+
+export const getSingleNoteFromApi = (id) => {
+  return get(`/notes/${id}`);
+};

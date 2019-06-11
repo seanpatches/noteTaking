@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getNotes, getNotesLoading } from '../selectors/noteSelectors';
 import Notes from '../components/notes/Notes';
+import CreateNote from './CreateNote';
 
 class AllNotes extends PureComponent {
   static propTypes = {
@@ -20,7 +21,12 @@ class AllNotes extends PureComponent {
     const { notes, loading } = this.props;
     if(loading) return <h1>Loading</h1>;
 
-    return <Notes notes={notes} />;
+    return (
+    <>
+    <CreateNote />
+    <Notes notes={notes} />
+    </>
+    );
   }
 }
 

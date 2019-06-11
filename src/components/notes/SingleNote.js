@@ -1,17 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 
-function Note({ note }) {
+function SingleNote({ note }) {
   return (
     <>
-      <Link to={note.title}>{note.title}</Link>
+      <h2>{note.title}</h2>
       <p>{note.body}</p>
+      <p>{note._id}</p>
     </>
   );
 }
 
-Note.propTypes = {
+SingleNote.propTypes = {
   note: PropTypes.shape({
     _id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
@@ -19,4 +19,4 @@ Note.propTypes = {
   }).isRequired
 };
 
-export default Note;
+export default SingleNote;
