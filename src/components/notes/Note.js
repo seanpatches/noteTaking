@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 function Note({ note }) {
   return (
     <>
-      <Link to={note.title}>{note.title}</Link>
+      <Link to={note._id}>{note.title}</Link>
       <p>{note.body}</p>
     </>
   );

@@ -3,7 +3,8 @@ const initialState = {
   loading: false,
   title: '',
   body: '',
-  list: []
+  list: [],
+  singleNote: {}
 };
 
 export default function notesReducer(state = initialState, action) {
@@ -17,7 +18,7 @@ export default function notesReducer(state = initialState, action) {
     case FETCH_NOTES_PENDING:
       return { ...state, loading: true };
     case FETCH_SINGLE_NOTE:
-      return { ...state, list: action.payload, loading: false };
+      return { ...state, singleNote: action.payload, loading: false };
     case FETCH_SINGLE_NOTE_PENDING:
       return { ...state, loading: true };
     default: return state;

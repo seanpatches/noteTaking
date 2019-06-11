@@ -7,33 +7,30 @@ import { fetchSingleNote } from '../actions/noteActions';
 
 class NoteDetail extends PureComponent{
   static propTypes = {
-    fetchSingleNote: PropTypes.func.isRequired
-  }
-
-  state = {
-    note: {},
-    selectedNote: ''
+    fetchSingle: PropTypes.func.isRequired,
+    note: PropTypes.object.isRequired,
+    selectedNote: PropTypes.string.isRequired
   }
 
   componentDidMount(){
-    this.props.fetchSingleNote();
+    this.props.fetchSingle(this.props.selectedNote);
   }
 
   render() {
-    return <SingleNote note={this.state.note} />;
+    return <SingleNote note={this.props.note} />;
   }
 
 }
 
 const mapDispatchToProps = dispatch => ({
-  fetchSingleNote(title){
-    dispatch(fetchSingleNote(title));
+  fetchSingle(id){
+    dispatch(fetchSingleNote(id));
   }
 });
 
 const mapStateToProps = (state, props) => ({
   note: getSingleNote(state),
-  selectedNote: props.match.params.title
+  selectedNote: props.match.params.id
 });
 
 export default connect(
