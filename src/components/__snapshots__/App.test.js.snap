@@ -9,7 +9,7 @@ exports[`App component renders App 1`] = `
           "$$typeof": Symbol(react.memo),
           "WrappedComponent": [Function],
           "compare": null,
-          "displayName": "Connect(AllNotes)",
+          "displayName": "Connect(withSession)",
           "type": [Function],
         }
       }
@@ -23,7 +23,21 @@ exports[`App component renders App 1`] = `
           "$$typeof": Symbol(react.memo),
           "WrappedComponent": [Function],
           "compare": null,
-          "displayName": "Connect(NoteDetail)",
+          "displayName": "Connect(Callback)",
+          "type": [Function],
+        }
+      }
+      exact={true}
+      path="/callback"
+    />
+    ;
+    <Route
+      component={
+        Object {
+          "$$typeof": Symbol(react.memo),
+          "WrappedComponent": [Function],
+          "compare": null,
+          "displayName": "Connect(withSession)",
           "type": [Function],
         }
       }
